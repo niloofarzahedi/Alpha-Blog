@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  pool: 5
+  username: admin
+  password: admin
+
+development:
+  <<: *default
+  database: alphablog
+
+test:
+  <<: *default
+  database: alphablog_test
+
+production:
+  <<: *default
+  database: alphablog_production
