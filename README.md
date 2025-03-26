@@ -22,4 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
->>>>>>> f77bcd6 (Initial commit)
