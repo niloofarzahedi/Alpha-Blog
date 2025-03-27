@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  root 'pages#home'
+  devise_for :users, controllers: { 
+    registration: 'users/registration',
+    sessions: 'users/sessions',
+    omniauth_callbacks: 'users/omniauth_callbacks' }
   get "follows/create"
   get "follows/destroy"
   get "likes/create"
@@ -12,6 +17,5 @@ Rails.application.routes.draw do
   get "posts/edit"
   get "posts/update"
   get "posts/destroy"
-  root 'pages#home'
   resources :articles
 end
