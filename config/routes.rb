@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   get "posts/update"
   get "posts/destroy"
   root 'pages#home'
-  resources :articles, only: [ :index, :show]
+  resources :articles, only: [ :index, :show, :new, :create]
 end
