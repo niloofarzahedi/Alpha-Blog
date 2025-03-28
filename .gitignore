@@ -1,5 +1,4 @@
-#ignore all html files
-/app/views/
+
 # Ignore bundler config
 /.bundle
 

@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      resource :profile, only: [:show, :update]
+    end
+  end
   get "follows/create"
   get "follows/destroy"
   get "likes/create"
@@ -13,5 +18,5 @@ Rails.application.routes.draw do
   get "posts/update"
   get "posts/destroy"
   root 'pages#home'
-  resources :articles
+  resources :articles, only: [ :index, :show]
 end
