@@ -12,15 +12,17 @@ class ArticlesController < ApplicationController
     end
 
     def new
+        @article = Article.new # Initialize a new article object
     end
 
     def create
         @article = Article.new(params.require(:article).permit(:title, :description))
         puts @article.inspect # Debugging line to check the article object
         if @article.save
-          render plain: @article # Render @article if it saves successfully
+          flash[:notice] = "Article was successfully created." # Set a flash message
+          redirect_to @article # Redirect to the show page of the article
         else
-          render plain: "Error saving article" # Handle errors
+          render :new # Render the new template again if save fails
         end
     end
 
