@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :chats do
+    resources :messages, param: :chat_id
+  end
   get "chat_users/create"
   get "messages/create"
   get "chats/show"
