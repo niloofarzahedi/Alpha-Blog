@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
         @articles = Article.all 
     end
     
-    
+    before_action :authenticate_user!
     def show
         # byebug
         @article = Article.find(params[:id])
