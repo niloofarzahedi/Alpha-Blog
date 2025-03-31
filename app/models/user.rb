@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-    validates :name, uniqueness: { case_sensitive: false }
+    validates :name, presence: true, uniqueness: { case_sensitive: false }
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email, presence: true, 
                       uniqueness: { case_sensitive: false }, 
