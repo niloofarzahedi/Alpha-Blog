@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get "chat_users/create"
+  get "messages/create"
+  get "chats/show"
   mount_avo
   devise_for :users
   namespace :api do
