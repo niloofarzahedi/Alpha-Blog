@@ -4,6 +4,8 @@ source "https://rubygems.org"
 gem 'devise'
 #ENV variables
 gem 'dotenv-rails'
+#admin panel
+gem 'avo'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.2"
