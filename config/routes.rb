@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "messages/create"
   get "chats/show"
   mount_avo
-  devise_for :users
+  devise_for :users, path_names: { sign_in: 'login' }
   namespace :api do
     namespace :v1 do
       resource :profile, only: [:show, :update]
@@ -18,13 +18,7 @@ Rails.application.routes.draw do
   get "likes/destroy"
   get "comments/create"
   get "comments/destroy"
-  get "posts/index"
-  get "posts/show"
-  get "posts/new"
-  get "posts/create"
-  get "posts/edit"
-  get "posts/update"
-  get "posts/destroy"
+  resources :posts
   root 'pages#home'
   resources :articles, only: [ :index, :show, :new, :create, :edit, :update]
 end
