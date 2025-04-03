@@ -11,7 +11,10 @@
     <%= form.label :user_id %>
     <%= form.text_field :user_id %>
   </div>
-        
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.rich_text_area :description %>
+  </div>
   <div>
     <%= form.submit %>
   </div>

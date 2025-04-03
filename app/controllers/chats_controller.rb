@@ -2,6 +2,10 @@ class ChatsController < ApplicationController
 
   def show
     @user = current_user
+    if @user.nil?
+      redirect_to new_user_session_path, alert: "You must be logged in to access chats."
+      return
+    end
     @chats = @user.chats
     #Search for a chat if it exists or create a new instance of chat↓
     @chat = find_or_create_chat 

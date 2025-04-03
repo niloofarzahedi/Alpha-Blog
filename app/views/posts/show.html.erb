@@ -1,5 +1,8 @@
+<%cache @post do %>
 <h1><%= @post.content %></h1>
 <h2><%= @post.user_id %></h2>
+<%= @post.description %>
+<%end %>
 
 <%= link_to "Back", posts_path %>
 <%= link_to "Edit", edit_post_path(@post) %>
