@@ -1,14 +1,12 @@
 class ArticlesController < ApplicationController
-
     def index
-        @articles = Article.all 
+        @articles = Article.all
     end
-    
+
     before_action :authenticate_user!
     def show
         # byebug
         @article = Article.find(params[:id])
-        
     end
 
     def new
@@ -39,6 +37,4 @@ class ArticlesController < ApplicationController
           render :edit
         end
     end
-
-
 end

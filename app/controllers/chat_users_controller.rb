@@ -1,5 +1,4 @@
 class ChatUsersController < ApplicationController
-
   # Require authentication before any action in this controller
   before_action :authenticate_user!
   before_action :set_chat

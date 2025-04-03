@@ -1,5 +1,4 @@
 class MessagesController < ApplicationController
-
   def create
     @chat = Chat.find(params[:chat_id])
     if @chat
@@ -9,7 +8,7 @@ class MessagesController < ApplicationController
       # Broadcast the message to all subscribers
       ChatChannel.broadcast_to(
         @chat,
-        message: render_to_string(partial: "messages/message", 
+        message: render_to_string(partial: "messages/message",
         locals: { message: @message }),
         sender_id: @message.user.id
       )

@@ -1,7 +1,7 @@
 class SubscribersController < ApplicationController
     before_action :authenticate_user!
     before_action :set_post
-  
+
     def create
         @subscriber = @post.subscribers.find_or_initialize_by(email: current_user.email)
         if @subscriber.persisted?
@@ -17,7 +17,7 @@ class SubscribersController < ApplicationController
         end
     end
     private
-  
+
     def set_post
       @post = Post.find(params[:post_id])
     end

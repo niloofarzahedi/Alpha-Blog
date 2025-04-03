@@ -8,5 +8,4 @@ class PostMailer < ApplicationMailer
     @post = params[:post]
     mail to: params[:subscriber].email
   end
-
 end

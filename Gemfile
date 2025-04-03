@@ -1,13 +1,13 @@
 source "https://rubygems.org"
 
-#bullet for detecting N+1 queries
-gem 'bullet', '~> 8.0'
-#for authentication
-gem 'devise'
-#ENV variables
-gem 'dotenv-rails'
-#admin panel
-gem 'avo'
+# bullet for detecting N+1 queries
+gem "bullet", "~> 8.0"
+# for authentication
+gem "devise"
+# ENV variables
+gem "dotenv-rails"
+# admin panel
+gem "avo"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.2"
@@ -26,7 +26,7 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-gem 'pg'
+gem "pg"
 
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
