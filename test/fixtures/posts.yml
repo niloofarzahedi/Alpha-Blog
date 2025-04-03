@@ -1,9 +1,23 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+post_one:
+  id: 1
+  user_id: 1
+  content: "This is the content of the first post."
+  inventory_count: 10
+  created_at: <%= Time.now - 2.days %>
+  updated_at: <%= Time.now - 2.days %>
 
-one:
-  user: one
-  content: MyText
+post_two:
+  id: 2
+  user_id: 2
+  content: "This is the content of the second post."
+  inventory_count: 5
+  created_at: <%= Time.now - 1.day %>
+  updated_at: <%= Time.now - 1.day %>
 
-two:
-  user: two
-  content: MyText
+post_three:
+  id: 3
+  user_id: 2
+  content: "This is the content of the third post."
+  inventory_count: 15
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>

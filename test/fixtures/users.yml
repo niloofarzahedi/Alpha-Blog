@@ -1,13 +1,27 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# /Users/niloufarzahedi/source/RoR/learning/alpha-blog/test/fixtures/users.yml
 
-one:
-  name: MyString
-  email: MyString
-  provider: MyString
-  uid: MyString
+user_one:
+  id: 1
+  name: John Doe
+  email: john.doe@example.com
+  provider: google
+  uid: 123456789
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password123') %>
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
 
-two:
-  name: MyString
-  email: MyString
-  provider: MyString
-  uid: MyString
+user_two:
+  id: 2
+  name: Jane Smith
+  email: jane.smith@example.com
+  provider: facebook
+  uid: 987654321
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'securepass456') %>
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
