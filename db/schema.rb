@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_03_092630) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_03_103635) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -119,7 +119,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_03_092630) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "inventory_count"
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "subscribers", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_subscribers_on_post_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -149,4 +158,5 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_03_092630) do
   add_foreign_key "messages", "chats"
   add_foreign_key "messages", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "subscribers", "posts"
 end

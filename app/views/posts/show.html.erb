@@ -1,9 +1,11 @@
 <%cache @post do %>
-<h1><%= @post.content %></h1>
-<h2><%= @post.user_id %></h2>
+<h1>content: <%= @post.content %></h1>
+<h2>author: <%= @post.user_id %></h2>
+<h3>inventory count: <%= @post.inventory_count %></h3>
 <%= @post.description %>
 <%end %>
 
+<%= render "inventory", post: @post %>
 <%= link_to "Back", posts_path %>
 <%= link_to "Edit", edit_post_path(@post) %>
 <%= button_to "Delete", @post, method: :delete, data: { turbo_confirm: "Are you sure?" } %>

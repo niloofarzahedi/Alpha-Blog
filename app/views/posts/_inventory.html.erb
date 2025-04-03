@@ -1,0 +1,10 @@
+<% if post.inventory_count? %>
+  <p><%= post.inventory_count %> in stock</p>
+<% else %>
+  <p>Out of stock</p>
+  <p>Email me when available.</p>
+
+  <%= form_with model: [post, Subscriber.new] do |form| %>
+    <%= form.submit "Submit" %>
+  <% end %>
+<% end %>

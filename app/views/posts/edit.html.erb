@@ -1,21 +1,5 @@
 <h1>Edit post</h1>
 
-<%= form_with model: @post do |form| %>
-    <% form.object.content ||= @post.content %>
-    <% form.object.user_id ||= @post.user_id %>
-  <div>
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-  <div>
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.rich_text_area :description %>
-  </div>
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+
+<%= render "form", post: @post %>
+<%= link_to "Cancel", posts_path %>

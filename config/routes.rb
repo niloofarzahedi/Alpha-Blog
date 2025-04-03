@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   get "likes/destroy"
   get "comments/create"
   get "comments/destroy"
-  resources :posts
+  resources :posts do
+    resources :subscribers, only: [:create]
+  end
   root 'pages#home'
   resources :articles, only: [ :index, :show, :new, :create, :edit, :update]
 end

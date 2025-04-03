@@ -5,7 +5,7 @@
 <div id="posts">
   <% @posts.each do |post| %>
     <div>
-      <%= link_to post.user_id, post %>
+      <%= link_to post.content, post %>
     </div>
   <% end %>
 </div>

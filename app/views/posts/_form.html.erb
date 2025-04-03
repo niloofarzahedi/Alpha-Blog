@@ -1,0 +1,18 @@
+<%= form_with model: post do |form| %>
+    <div>
+        <%= form.label :content %>
+        <%= form.text_field :content %>
+    </div>
+    <div>
+        <%= form.label :user_id %>
+        <%= form.text_field :user_id %>
+    </div>
+    <div>
+    <%= form.label :inventory_count, style: "display: block" %>
+    <%= form.number_field :inventory_count %>
+    </div>
+      
+    <div>
+        <%= form.submit %>
+    </div>
+  <% end %>
